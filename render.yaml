@@ -1,0 +1,13 @@
+services:
+  - name: my-nodejs-app
+    type: web
+    env: node
+    region: oregon
+    buildCommand: npm install
+    startCommand: node index.js
+    plan: free
+    branch: main # Specify the branch to deploy from
+    autoDeploy: true # Enable automatic deployment on code changes
+    envVars: # Environment variables directly in Render
+      - key: PORT
+        value: 3000
